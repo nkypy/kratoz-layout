@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "api/common;common";
+
+// 排序参数
+message SortRequest {
+  // 排序字段
+  string Field = 1;
+  // 排序顺序
+  string Order = 2;
+}

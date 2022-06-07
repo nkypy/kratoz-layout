@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package helloworld.service.v1;
+
+import "errors/errors.proto";
+
+option go_package = "api/helloworld/service/v1;v1";
+
+// 业务错误信息
+enum ErrorReason {
+  // 设置缺省错误码
+  option (errors.default_code) = 500;
+
+  TOO_BUSY = 0 [(errors.code) = 403]; // 请求太频繁
+  UNKNOWN_ERROR = 1; // 未知错误
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "api/common;common";
+
+// 分页参数
+message PaginationRequest {
+  // 页数
+  int64 Page = 1;
+  // 每页数量
+  int64 PerPage = 2;
+}
+
+
+// 分页响应数据
+message PaginationReply {
+  // 当前页数
+  int64 CurrentPage = 1;
+  // 总页数
+  int64 TotalPages = 2;
+  // 总数量
+  int64 TotalCount = 3;
+  // 每页数量
+  int64 PerPage = 4;
+}
